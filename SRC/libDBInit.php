@@ -2,6 +2,7 @@
 //
 //DB接続
 //
+
 function fnDbConnect()
 {
 	$conn = mysqli_connect('localhost', 'root', 'proclimb') or die('DB接続エラー1です。管理者にご報告をお願いいたします。');
