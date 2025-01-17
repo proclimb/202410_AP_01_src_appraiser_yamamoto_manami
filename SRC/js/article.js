@@ -9,6 +9,8 @@ function fnArticleEditCheck() {
 		return;
 	}
 	if (isLength(100, "物件名", form.article)) { return; }
+	if (isLength(100, "部屋番号", form.room)) { return; }
+
 
 	if (confirm('この内容で登録します。よろしいですか？')) {
 		form.act.value = 'articleEditComplete';
