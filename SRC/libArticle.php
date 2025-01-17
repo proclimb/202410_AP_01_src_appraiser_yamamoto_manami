@@ -186,6 +186,8 @@ function subArticleEdit()
 	} else {
 		$purpose = '登録';
 		$btnImage = 'btn_enter.png';
+
+		subMenu();
 	}
 
 	subMenu2();
