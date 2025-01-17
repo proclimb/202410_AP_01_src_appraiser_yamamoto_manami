@@ -262,7 +262,7 @@ function subArticleEdit()
 		</table>
 
 		<a href="javascript:fnArticleEditCheck();"><img src="./images/<?php print $btnImage ?>" /></a>　
-		<a href="javascript:form.act.value='fManager';form.submit();"><img src="./images/btn_return.png" /></a>
+		<a href="javascript:form.act.value='article';form.submit();"><img src="./images/btn_return.png" /></a>
 		<?php
 		if ($purpose === '更新') {
 		?>
