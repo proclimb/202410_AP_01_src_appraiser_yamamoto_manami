@@ -85,9 +85,10 @@ function subArticle()
 	if ($_REQUEST['act'] == 'article') {
 		return;
 	}
+
 	$sql = fnSqlArticleList(0, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleNote, $sKeyBox, $sDrawing, $sSellCharge, $sPage, $orderBy, $orderTo);
-	$res = mysql_query($sql);
-	$row = mysql_fetch_array($res);
+	$res = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_array($res);
 
 	$count = $row[0];
 
@@ -261,8 +262,8 @@ function subArticleEdit()
 			</tr>
 		</table>
 
-		<a href="javascript:fnArticleEditCheck();"><img src="./images/<?php print $btnImage ?>" /></a>　
-		<a href="javascript:form.act.value='article';form.submit();"><img src="./images/btn_return.png" /></a>
+		<a href="javascript:fnArticleEditCheck();"><img src="./images/<?php print $btnImage ?>" /></a>
+		<a href="javascript:form.act.value='articleSearch';form.submit();"><img src="./images/btn_return.png" /></a>
 		<?php
 		if ($purpose === '更新') {
 		?>
