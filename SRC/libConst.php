@@ -55,7 +55,8 @@ function subConst()
 				</tr>
 				<tr>
 					<th>施工業者</th>
-					<td><input type="text" name="sConstTrader" value="<?php print $sConstTrader ?>" size="30" /></td>
+					<td><input type="text" name="sConstTrader" value="<?php print $sConstTrader ?>" size="50" /></td>
+					<!-- <td><input type="text" name="sConstTrader" value="<?php print $sConstTrader ?>" size="30" /></td> -->
 				</tr>
 				<tr>
 					<th>工事中</th>
@@ -179,6 +180,8 @@ function subConstEdit()
 
 	$sDel            = htmlspecialchars($_REQUEST['sDel']);
 	$sArticle        = htmlspecialchars($_REQUEST['sArticle']);
+	$sConstTrader    = htmlspecialchars($_REQUEST['sConstTrader']);
+	$sConstFlg1      = htmlspecialchars($_REQUEST['sConstFlg1']);
 	$sConstFlg1      = htmlspecialchars($_REQUEST['sConstFlg1']);
 	$sConstFlg2      = htmlspecialchars($_REQUEST['sConstFlg2']);
 	$sConstFlg3      = htmlspecialchars($_REQUEST['sConstFlg3']);
@@ -262,6 +265,7 @@ function subConstEdit()
 		<input type="hidden" name="act" />
 		<input type="hidden" name="sDel" value="<?php print $sDel ?>" />
 		<input type="hidden" name="sArticle" value="<?php print $sArticle ?>" />
+		<input type="hidden" name="$sConstTrader" value="<?php print $sConstTrader ?>" />
 		<input type="hidden" name="sConstFlg1" value="<?php print $sConstFlg1 ?>" />
 		<input type="hidden" name="sConstFlg2" value="<?php print $sConstFlg2 ?>" />
 		<input type="hidden" name="sConstFlg3" value="<?php print $sConstFlg3 ?>" />
@@ -475,6 +479,7 @@ function subConstEditComplete()
 
 	$sDel            = htmlspecialchars($_REQUEST['sDel']);
 	$sArticle        = htmlspecialchars($_REQUEST['sArticle']);
+	$sConstTrader    = htmlspecialchars($_REQUEST['sConstTrader']);
 	$sConstFlg1      = htmlspecialchars($_REQUEST['sConstFlg1']);
 	$sConstFlg2      = htmlspecialchars($_REQUEST['sConstFlg2']);
 	$sConstFlg3      = htmlspecialchars($_REQUEST['sConstFlg3']);
