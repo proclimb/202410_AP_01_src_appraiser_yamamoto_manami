@@ -265,7 +265,7 @@ function subConstEdit()
 		<input type="hidden" name="act" />
 		<input type="hidden" name="sDel" value="<?php print $sDel ?>" />
 		<input type="hidden" name="sArticle" value="<?php print $sArticle ?>" />
-		<input type="hidden" name="$sConstTrader" value="<?php print $sConstTrader ?>" />
+		<input type="hidden" name="sConstTrader" value="<?php print $sConstTrader ?>" />
 		<input type="hidden" name="sConstFlg1" value="<?php print $sConstFlg1 ?>" />
 		<input type="hidden" name="sConstFlg2" value="<?php print $sConstFlg2 ?>" />
 		<input type="hidden" name="sConstFlg3" value="<?php print $sConstFlg3 ?>" />
