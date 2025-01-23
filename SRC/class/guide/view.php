@@ -297,7 +297,8 @@ function subGuideChoiceView($param)
 
 		部屋番号：<input type="text" name="cRoom" value="<?php print $param["cRoom"] ?>" /><br />
 
-		<input type="image" src="./images/btn_search.png" onclick="form.sPage.value=1;form.submit();" />
+		<!-- <input type="image" src="./images/btn_search.png" onclick="form.sPage.value=1;form.submit();" /> -->
+		<input type="image" src="./images/btn_search.png" onclick="form.act.value='guideChoiceSearch';form.submit();" />
 
 		<hr />
 		<?php
