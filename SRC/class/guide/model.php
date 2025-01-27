@@ -14,12 +14,11 @@ function fnSqlGuideList($flg, $param)
 
         case 1:
             $select = "SELECT A.GUIDENO, A.CONTENT, A.ARTICLENO, A.NAME, A.FAX, A.RESULT, A.ACCEPT, A.EXAM, A.PURCHASE, B.ARTICLE, B.ROOM,"
-                           . "IF( A.GUIDESTARTDT > '0000-00-00', DATE_FORMAT( A.GUIDESTARTDT, '%Y/%m/%d'), '') AS GUIDESTARTDT,"
-                           . "IF( A.GUIDEENDDT > '0000-00-00', DATE_FORMAT( A.GUIDEENDDT, '%Y/%m/%d'), '') AS GUIDEENDDT,"
-                           . "IF (A.GUIDESTARTTM > '00:00:00', DATE_FORMAT( A.GUIDESTARTTM, '%H:%i' ), '') AS GUIDESTARTTM,"
-                           . "IF (A.GUIDEENDTM > '00:00:00', DATE_FORMAT( A.GUIDEENDTM, '%H:%i' ), '') AS GUIDEENDTM,"
-                           . "IF( A.ACCEPTDT > '0000-00-00', DATE_FORMAT( A.ACCEPTDT, '%Y/%m/%d'), '' ) AS ACCEPTDT"
-                       ;
+                . "IF( A.GUIDESTARTDT > '0000-00-00', DATE_FORMAT( A.GUIDESTARTDT, '%Y/%m/%d'), '') AS GUIDESTARTDT,"
+                . "IF( A.GUIDEENDDT > '0000-00-00', DATE_FORMAT( A.GUIDEENDDT, '%Y/%m/%d'), '') AS GUIDEENDDT,"
+                . "IF (A.GUIDESTARTTM > '00:00:00', DATE_FORMAT( A.GUIDESTARTTM, '%H:%i' ), '') AS GUIDESTARTTM,"
+                . "IF (A.GUIDEENDTM > '00:00:00', DATE_FORMAT( A.GUIDEENDTM, '%H:%i' ), '') AS GUIDEENDTM,"
+                . "IF( A.ACCEPTDT > '0000-00-00', DATE_FORMAT( A.ACCEPTDT, '%Y/%m/%d'), '' ) AS ACCEPTDT";
 
             // 並び替えとデータ抽出数
             if ($param["orderBy"]) {
@@ -117,7 +116,7 @@ function fnSqlGuideArticleList($flg, $param)
     }
     $sql .= " FROM TBLARTICLE";
     $sql .= " WHERE DEL = " . $param["cDel"];
-    $sql .= " AND CONSTFLG4 <> 1";
+    // $sql .= " AND CONSTFLG4 <> 1";
 
     if ($param["cArticle"]) {
         $sql .= " AND ARTICLE LIKE '%" . $param["cArticle"] . "%'";
@@ -141,11 +140,10 @@ function fnSqlGuideArticleList($flg, $param)
 function fnSqlGuideEdit($guideNo)
 {
     $sql = "SELECT CONTENT, ACCEPT, EXAM, PURCHASE, GUIDESTARTTM, GUIDEENDTM,"
-                   . "ARTICLENO, NAME, BRANCH, TEL, FAX, CHARGE, RESULT,"
-                   . "IF( GUIDESTARTDT > '0000-00-00', DATE_FORMAT( GUIDESTARTDT, '%Y/%m/%d'), '' ) AS GUIDESTARTDT,"
-                   . "IF( GUIDEENDDT > '0000-00-00', DATE_FORMAT( GUIDEENDDT, '%Y/%m/%d'), '' ) AS GUIDEENDDT,"
-                   . "IF( ACCEPTDT > '0000-00-00', DATE_FORMAT( ACCEPTDT, '%Y/%m/%d'), '' ) AS ACCEPTDT"
-               ;
+        . "ARTICLENO, NAME, BRANCH, TEL, FAX, CHARGE, RESULT,"
+        . "IF( GUIDESTARTDT > '0000-00-00', DATE_FORMAT( GUIDESTARTDT, '%Y/%m/%d'), '' ) AS GUIDESTARTDT,"
+        . "IF( GUIDEENDDT > '0000-00-00', DATE_FORMAT( GUIDEENDDT, '%Y/%m/%d'), '' ) AS GUIDEENDDT,"
+        . "IF( ACCEPTDT > '0000-00-00', DATE_FORMAT( ACCEPTDT, '%Y/%m/%d'), '' ) AS ACCEPTDT";
     $sql .= " FROM TBLGUIDE";
     $sql .= " WHERE DEL = 1";
     $sql .= " AND GUIDENO = $guideNo";
@@ -163,10 +161,9 @@ function fnSqlGuideInsert($param)
         . " TEL, FAX, CHARGE, RESULT, ACCEPTDT, ACCEPT, EXAM, PURCHASE, INSDT, UPDT, DEL";
     $sql .= " ) VALUES ( ";
     $sql .= "'" . $param["guideNo"] . "','" . $param["articleNo"] . "','" . $param["content"] . "','" . $param["guideStartDT"] . "','"
-                . $param["guideEndDT"] . "','" . $param["guideStartTM"] . "','" . $param["guideEndTM"] . "','" . $param["name"] . "','"
-                . $param["branch"] . "','" . $param["tel"] . "','" . $param["fax"] . "','" . $param["charge"] . "','" . $param["result"] . "','"
-                . $param["acceptDT"] . "','" . $param["accept"] . "','" . $param["exam"] . "','" . $param["purchase"] . "', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1 )"
-            ;
+        . $param["guideEndDT"] . "','" . $param["guideStartTM"] . "','" . $param["guideEndTM"] . "','" . $param["name"] . "','"
+        . $param["branch"] . "','" . $param["tel"] . "','" . $param["fax"] . "','" . $param["charge"] . "','" . $param["result"] . "','"
+        . $param["acceptDT"] . "','" . $param["accept"] . "','" . $param["exam"] . "','" . $param["purchase"] . "', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1 )";
 
     return ($sql);
 }
