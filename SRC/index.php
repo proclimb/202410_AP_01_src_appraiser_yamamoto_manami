@@ -80,7 +80,7 @@ if ($_COOKIE['cUserNo'] != '' && $_COOKIE['authority'] != '') { //ページ跨�
 <body>
     <!-- 確認用 -->
 
-    <table border="0" cellpadding="5" cellspacing="1">
+    <!-- <table border="0" cellpadding="5" cellspacing="1">
         <tr>
             <td valign="top">
                 $_REQUEST :
@@ -118,7 +118,7 @@ if ($_COOKIE['cUserNo'] != '' && $_COOKIE['authority'] != '') { //ページ跨�
 
 
 
-    </table>
+    </table> -->
 
     <!-- ここまで確認用 -->
 
