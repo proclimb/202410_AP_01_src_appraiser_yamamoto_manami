@@ -187,10 +187,8 @@ function subArticleEdit()
 	} else {
 		$purpose = '登録';
 		$btnImage = 'btn_enter.png';
-
-		subMenu();
 	}
-
+	subMenu();
 	subMenu2();
 ?>
 	<script type="text/javascript" src="./js/article.js"></script>
