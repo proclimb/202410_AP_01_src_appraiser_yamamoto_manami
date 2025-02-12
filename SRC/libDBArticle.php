@@ -80,6 +80,7 @@ function fnSqlArticleUpdate($articleNo, $article, $room, $keyPlace, $address, $a
 	$sql .= ",ADDRESS = '$address'";
 	$sql .= ",ARTICLENOTE = '$articleNote'";
 	$sql .= ",KEYBOX = '$keyBox'";
+	$sql .= ",UPDT = CURRENT_TIMESTAMP";
 	$sql .= ",DRAWING = '$drawing'";
 	$sql .= ",SELLCHARGE = '$sellCharge'";
 	$sql .= ",DEL = '$del'";
