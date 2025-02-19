@@ -41,6 +41,9 @@ require('class/title/control.php');
 define("PAGE_MAX", 100);
 
 // ログインチェック
+// パスワードハッシュ化、複合化
+define("PASSWORD_DEFAULT", "2y");
+
 switch ($_REQUEST['act']) {
         // ログインチェック
     case 'loginCheck':
