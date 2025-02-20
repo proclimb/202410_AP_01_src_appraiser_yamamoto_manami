@@ -48,7 +48,7 @@ function subLoginCheck()
 
 	$conn = fnDbConnect();
 
-	$sql = fnSqlLogin($id);
+	$sql = fnSqlLogin($id, $pw);
 	$res = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_array($res);
 
