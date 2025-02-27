@@ -81,49 +81,6 @@ if ($_COOKIE['cUserNo'] != '' && $_COOKIE['authority'] != '') { //ページ跨�
 </head>
 
 <body>
-    <!-- 確認用 -->
-
-    <!-- <table border="0" cellpadding="5" cellspacing="1">
-        <tr>
-            <td valign="top">
-                $_REQUEST :
-                <pre>
-    <?php
-    var_dump($_REQUEST);
-    ?>
-    </pre>
-            </td>
-            <td valign="top">
-                $param:
-                <pre>
-                <?php
-                var_dump($param);
-                ?>
-                </pre>
-            </td>
-            <td valign="top">
-                $row:
-                <pre>
-                <?php
-                var_dump($row);
-                ?>
-                </pre>
-            </td>
-            <td valign="top">
-                $sql:
-                <pre>
-                <?php
-                var_dump($sql);
-                ?>
-                </pre>
-            </td>
-        </tr>
-
-
-
-    </table> -->
-
-    <!-- ここまで確認用 -->
 
 
     <?php
